@@ -25,7 +25,7 @@ jobs:
               run: ls
             
             - name: printing file content
-              run: cat READE.md
+              run: cat README.md
 
             - name : Exit Text
               run: echo "\n =================================== \n Bye ! We are sad to see you go. \n =================================== \n"
