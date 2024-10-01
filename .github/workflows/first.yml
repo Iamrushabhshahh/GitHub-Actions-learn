@@ -22,7 +22,7 @@ jobs:
               run: ls
             
             - name: printing file content
-              run: cat READ,E.md
+              run: cat READE.md
 
             - name : Exit Text
               run: echo "\n =================================== \n Bye ! We are sad to see you go. \n =================================== \n"
