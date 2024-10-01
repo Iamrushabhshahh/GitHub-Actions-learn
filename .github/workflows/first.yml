@@ -1,0 +1,30 @@
+name : My first action
+
+on : push
+
+jobs: 
+    first_job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Welcome Message
+              run : echo "Hello ! Rushabh Welcome"
+
+            - name: apt update
+              run : sudo apt update 
+            
+            - name: apt upgrade
+              run : sudo apt upgrade
+            
+            - name: print Os name
+              run: cat /etc/os-release
+
+            - name : List all files
+              run: ls
+            
+            - name: printing file content
+              run: cat READ,E.md
+
+            - name : Exit Text
+              run: echo "\n =================================== \n Bye ! We are sad to see you go. \n =================================== \n"
+
+            
