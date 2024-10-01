@@ -18,6 +18,9 @@ jobs:
             - name: print Os name
               run: cat /etc/os-release
 
+            - name: Checkout
+              uses: actions/checkout@v4.2.0
+          
             - name : List all files
               run: ls
             
