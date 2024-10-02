@@ -16,7 +16,7 @@ jobs:
               run : cowsay -f dragon "Hey rushabh learning GitHub Actions be aware" > dragon.txt
 
             - name: test file exists
-              run : grep -i "dragon" dragon.txt
+              run : grep -i "rushabh" dragon.txt
 
             - name : Read file
               run : cat dragon.txt
