@@ -6,14 +6,21 @@ jobs:
     first_job:
         runs-on: ubuntu-latest
         steps:
-            - name: Welcome Message
-              run : echo "Hello ! Rushabh Welcome"
+            - name: Welcome & Update - Upgrade
+              run : |
+                echo "Hello ! Rushabh Welcome"
+                sudo apt update -y
+                sudo apt upgrade -y 
 
-            - name: apt update
-              run : sudo apt update 
+            - name : Gnerate Ascii Work    
+              run : | 
+               cowsay -f dragon "Rushabh is learning GitHub Actions and will soon do automation"
+                 
+            # - name: apt update
+            #   run : sudo apt update 
             
-            - name: apt upgrade
-              run : sudo apt upgrade
+            # - name: apt upgrade
+            #   run : sudo apt upgrade
             
             - name: print Os name
               run: cat /etc/os-release
@@ -21,13 +28,16 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v4.2.0
           
-            - name : List all files
-              run: ls
-            
-            - name: printing file content
-              run: cat README.md
+            - name : List all files & Print Read me 
+              run: |
+                ls
+                cat README.md
+                echo "=================================== Bye ! We are sad to see you go.  =================================== "
 
-            - name : Exit Text
-              run: echo "\n =================================== \n Bye ! We are sad to see you go. \n =================================== \n"
+            # - name: printing file content
+            #   run: cat README.md
+
+            # - name : Exit Text
+            #   run: echo "=================================== Bye ! We are sad to see you go.  =================================== "
 
             
