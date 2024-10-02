@@ -11,23 +11,17 @@ jobs:
             
             - name : Install cow-say
               run : sudo apt install cowsay -y
-            
-            - name : Sleep 10 Sec
-              run : sleep 15
-
     Test-02:
         runs-on: ubuntu-latest
+        needs: Build-01
         steps:
-            - name : Sleep 10 Sec
-              run : sleep 10
             - name : Check file
               run : grep -i "rushabh" dragon.txt 
     
     Deploy-03:
         runs-on: ubuntu-latest
+        needs: [Test-02,Build-01]
         steps:
-            - name: Sleep 5 Sec
-              run : sleep 5
 
             - name : Run Script
               run : grep -i "rushabh" dragon.txt
