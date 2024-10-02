@@ -1,0 +1,36 @@
+name : multiple job
+
+on : push
+
+jobs:
+    Build-01:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4.2.0
+            
+            - name : Install cow-say
+              run : apt install cowsay -y
+            
+            - name : Sleep 10 Sec
+              run : sleep 15
+
+    Test-02:
+        runs-on: ubuntu-latest
+        steps:
+            - name : Sleep 10 Sec
+              run : sleep 10
+            - name : Check file
+              run : grep -i "rushabh" dragon.txt 
+    
+    Deploy-03:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Sleep 5 Sec
+              run : sleep 5
+
+            - name : Run Script
+              run : grep -i "rushabh" dragon.txt
+
+            - name : cat file
+              run: cat dragon.txt
