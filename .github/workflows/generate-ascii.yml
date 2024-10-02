@@ -1,4 +1,4 @@
-name : My first action
+name : Generate Ascii & Download package
 
 on : push
 
