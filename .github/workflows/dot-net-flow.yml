@@ -2,15 +2,19 @@ name: build
 
 on:
   workflow_dispatch: 
-
+  push:
+    
 jobs:
   build:
     name: build
     runs-on: windows-2019
     steps:
       - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+         dotnet-version: '4.5.x'
        
-      # .NET Framework 4.5 is pre-installed on windows-latest, no need to setup explicitly
       - name : print dotnet version
         run : dotnet --version
 
