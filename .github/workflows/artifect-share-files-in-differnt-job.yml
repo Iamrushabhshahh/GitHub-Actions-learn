@@ -28,8 +28,7 @@ jobs:
 
             - name: Download a Build Artifact
               uses: actions/download-artifact@v4.1.8
-              with: 
-                name: Dragon.txt
+
                   
             - name : Check file
               run : grep -i "rushabh" dragon.txt 
