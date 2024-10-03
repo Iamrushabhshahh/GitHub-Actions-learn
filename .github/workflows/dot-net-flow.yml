@@ -9,10 +9,12 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
-      
+       
+      - name : Install .net 4.5 
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '4.5' # Semantic version range syntax or exact version of a dotnet version
       # .NET Framework 4.5 is pre-installed on windows-latest, no need to setup explicitly
       - name : print dotnet version
         run : dotnet --version
 
-      - name: Install NuGet
-        run: nuget restore
