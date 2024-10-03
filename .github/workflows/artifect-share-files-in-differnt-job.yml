@@ -13,7 +13,7 @@ jobs:
               run : sudo apt install cowsay -y
               
             - name: Executing cmd command
-              run : dragon "Hey rushabh learning GitHub Actions be aware" > dragon.txt 
+              run : cowsay -f dragon "Hey rushabh learning GitHub Actions be aware" > dragon.txt 
               
             - name: Upload a Build Artifact
               uses: actions/upload-artifact@v4.4.0
@@ -42,6 +42,7 @@ jobs:
               uses: actions/download-artifact@v4.1.8
               with: 
                 name: dragon.txt
+
 
             - name : Run Script
               run : grep -i "rushabh" dragon.txt
