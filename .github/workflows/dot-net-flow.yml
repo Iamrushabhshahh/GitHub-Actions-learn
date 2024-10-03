@@ -10,10 +10,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
        
-      - name : Install .net 4.5 
-        uses: actions/setup-dotnet@v4
+      - name: Install .NET Framework 4.5
+        run: |
+         Invoke-WebRequest -Uri https://download.microsoft.com/download/F/0/6/F06C18D0-7F4D-4C3E-A514-0B4A17AC12C5/NDP451-KB2858728-x86-x64-AllOS-ENU.exe -OutFile dotnet-framework-installer.exe
+         Start-Process -FilePath dotnet-framework-installer.exe -ArgumentList '/quiet', '/norestart' -Wait
+         Remove-Item -Force dotnet-framework-installer.exe
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '4.5' # Semantic version range syntax or exact version of a dotnet version
+          dotnet-version: '4.5'
+
       # .NET Framework 4.5 is pre-installed on windows-latest, no need to setup explicitly
       - name : print dotnet version
         run : dotnet --version
