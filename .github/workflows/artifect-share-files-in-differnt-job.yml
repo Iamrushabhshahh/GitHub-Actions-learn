@@ -28,6 +28,8 @@ jobs:
 
             - name: Download a Build Artifact
               uses: actions/download-artifact@v4.1.8
+              with: 
+                name: dragon.txt
 
                   
             - name : Check file
@@ -40,7 +42,7 @@ jobs:
             - name: Download a Build Artifact
               uses: actions/download-artifact@v4.1.8
               with: 
-                name: Dragon.txt
+                name: dragon.txt
 
 
             - name : Run Script
